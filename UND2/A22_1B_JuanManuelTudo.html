@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+    <meta charset="UTF-8">
+    <meta mame="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de multiplicar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: aliceblue ;
+        }
+        table{
+            border: 1px;
+            color: gray;
+        }
+        h1{
+            margin-top: 50px;
+            margin-left:25%;
+            margin-bottom: 25px;
+            font-family: 'Courier New', Courier, monospace;
+            color: blue;
+            align-content: center;
+            font-size: 50px;
+            text-align: auto;
+        }
+        form{
+            margin-left: 15%;
+            color:red;
+            font-size: 30px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #lablnum{
+            margin-left:30%;
+            margin-top: 15px;
+            border: 2px;
+            background-color: bisque;
+            width: 250px;
+            height: 70px;
+            font-size: 60px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #button{
+            margin-left: 30%;
+            background-color: gray;
+            width: 200px;
+            height: 60px;
+            font-size: 30px;
+        }
+
+    </style>
+<body>
+    <!-- Formulario de post -->
+    <h1>Tabla de Multiplicar</h1> 
+    <form action="" method="POST">
+        <label>Introduce un numero para hacer su tabla de  multiplicar<br></label>
+        <input id="lablnum" type="number" name="numero"/><br>
+        <input id="button" type="submit" value="Enviar"><br>
+    </form>
+
+    <!-- comprobamos si llega el POST -->
+
+    <!--Esta es la tabla para cuando me den el numero-->
+    <php>
+        
+
+        if($_POST!==""){
+        $num=$_POST["numero"];
+            echo "<table>";
+            echo "<tr>";
+            echo "<th>Operacion </th><th> Resultado</th>";
+            echo "</tr>";
+                    for($i=1;$i<=10;$i=$i+1){
+                        $resul=$i*$num;
+                        echo " $num por $i es $resul <br>";
+                        echo "<tr>";
+                        echo"<td>$num X $i = </td><td>$resul</td>";
+                        echo "</tr>";
+                    }
+            echo "</table>";
+        }Else{ 
+            print "Introduce un numero";
+    };
+    ?>
+        
+</php>
+
+</body>
+</html>
